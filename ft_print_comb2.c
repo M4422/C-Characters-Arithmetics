@@ -23,7 +23,7 @@ void	ft_print_comb2(void)
 				ft_putchar(ch3);
 				ft_putchar(ch4);
 				ft_putchar(',');
-				ft_putchar('\n');
+				ft_putchar(' ');
 				
 				
 			}
@@ -35,7 +35,7 @@ void	ft_print_comb2(void)
 				ft_putchar(ch3);
 				ft_putchar(ch4);
 				ft_putchar(',');
-				ft_putchar('\n');
+				ft_putchar(' ');
 				
 
 			}
@@ -73,7 +73,11 @@ void	ft_print_comb2(void)
 		{
 			ch2 = '0';
 		}
-		ch2++;
+		else
+		{
+			ch2++;
+		}
+		
 		i++;
 	}
 }
