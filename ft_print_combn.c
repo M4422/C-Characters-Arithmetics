@@ -66,24 +66,23 @@ void	ft_print_combn(int n)
 	char	chs[9];
 	int		i;
 	int		power;
-	int		k;
 
-	i = 0;
-	k = 1;
+	i = -1;
 	power = 1;
-	while (i < n)
-	{		
-		if (n != 1 && i != n - 1)
-			k = k * 10 + i + 2;
+	while (++i < n)
+	{
 		chs[i] = '0' + i;
-		power = power * 10;
-		i++;
+		power *= 10;
 	}
-	i = k ;
+	i = 1;
 	while (i <= power)
 	{
 		if (check_chain(chs, n))
+		{
 			put_group(chs, n);
+			if (chs[0] == '9' - n + 1)
+				break;
+		}
 		increment(chs, power, i, n);
 		i++;
 	}
@@ -91,5 +90,5 @@ void	ft_print_combn(int n)
 
 int main ()
 {
-	ft_print_combn(9);
+	ft_print_combn(3);
 }
